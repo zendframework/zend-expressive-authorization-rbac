@@ -3,7 +3,7 @@
 [![Build Status](https://secure.travis-ci.org/zendframework/zend-expressive-authorization-rbac.svg?branch=master)](https://secure.travis-ci.org/zendframework/zend-expressive-authorization-rbac)
 [![Coverage Status](https://coveralls.io/repos/github/zendframework/zend-expressive-authorization-rbac/badge.svg?branch=master)](https://coveralls.io/github/zendframework/zend-expressive-authorization-rbac?branch=master)
 
-This library provides ... 
+This library provides a zend-rbac adapter for zend-expressive-authorization.
 
 ## Installation
 
