@@ -25,12 +25,6 @@ class ZendRbac implements AuthorizationInterface
      */
     private $assertion;
 
-    /**
-     * Constructor
-     *
-     * @param Rbac $rbac
-     * @param ZendRbacAssertionInterface $assertion
-     */
     public function __construct(Rbac $rbac, ZendRbacAssertionInterface $assertion = null)
     {
         $this->rbac = $rbac;
