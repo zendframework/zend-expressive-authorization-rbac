@@ -12,5 +12,5 @@ use Zend\Permissions\Rbac\AssertionInterface as AssertionInterface;
 
 interface ZendRbacAssertionInterface extends AssertionInterface
 {
-    public function setRequest(ServerRequestInterface $request): void;
+    public function setRequest(ServerRequestInterface $request) : void;
 }

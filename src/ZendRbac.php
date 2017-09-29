@@ -40,7 +40,7 @@ class ZendRbac implements AuthorizationInterface
     /**
      * {@inheritDoc}
      */
-    public function isGranted(string $role, ServerRequestInterface $request): bool
+    public function isGranted(string $role, ServerRequestInterface $request) : bool
     {
         $routeResult = $request->getAttribute(RouteResult::class, false);
         if (false === $routeResult) {
