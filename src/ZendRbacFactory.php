@@ -9,7 +9,6 @@ namespace Zend\Expressive\Authorization\Rbac;
 
 use Psr\Container\ContainerInterface;
 use Zend\Expressive\Authorization\AuthorizationInterface;
-use Zend\Permissions\Rbac\AssertionInterface;
 use Zend\Permissions\Rbac\Exception\ExceptionInterface as RbacExceptionInterface;
 use Zend\Permissions\Rbac\Rbac;
 
