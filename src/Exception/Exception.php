@@ -10,6 +10,6 @@ namespace Zend\Expressive\Authorization\Rbac\Exception;
 /**
  * Marker interface for package-specific exceptions
  */
-interface ExceptionInterface
+interface Exception
 {
 }
