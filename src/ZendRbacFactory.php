@@ -14,6 +14,9 @@ use Zend\Permissions\Rbac\Rbac;
 
 class ZendRbacFactory
 {
+    /**
+     * @throws Exception\InvalidConfigException
+     */
     public function __invoke(ContainerInterface $container) : AuthorizationInterface
     {
         $config = $container->get('config')['authorization'] ?? null;
@@ -47,6 +50,9 @@ class ZendRbacFactory
         return new ZendRbac($rbac, $assertion);
     }
 
+    /**
+     * @throws Exception\InvalidConfigException
+     */
     private function injectRoles(Rbac $rbac, array $roles) : void
     {
         $rbac->setCreateMissingRoles(true);
@@ -61,6 +67,9 @@ class ZendRbacFactory
         }
     }
 
+    /**
+     * @throws Exception\InvalidConfigException
+     */
     private function injectPermissions(Rbac $rbac, array $specification) : void
     {
         foreach ($specification as $role => $permissions) {

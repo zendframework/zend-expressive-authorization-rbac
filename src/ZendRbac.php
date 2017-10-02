@@ -33,6 +33,8 @@ class ZendRbac implements AuthorizationInterface
 
     /**
      * {@inheritDoc}
+     *
+     * @throws Exception\RuntimeException
      */
     public function isGranted(string $role, ServerRequestInterface $request) : bool
     {
