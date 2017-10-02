@@ -8,9 +8,9 @@
 namespace Zend\Expressive\Authorization\Rbac;
 
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Permissions\Rbac\AssertionInterface as AssertionInterface;
+use Zend\Permissions\Rbac\AssertionInterface;
 
 interface ZendRbacAssertionInterface extends AssertionInterface
 {
-    public function setRequest(ServerRequestInterface $request): void;
+    public function setRequest(ServerRequestInterface $request) : void;
 }
