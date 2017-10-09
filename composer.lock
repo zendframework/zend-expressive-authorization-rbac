@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b205193bb4f6c4694455af1d18c2b85b",
+    "content-hash": "7a8685fc5ee97fed0a16e4b4733f8dd2",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -208,25 +208,65 @@
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
-            "name": "zendframework/zend-expressive-authorization",
-            "version": "0.1.0",
+            "name": "webimpress/http-middleware-compatibility",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/zendframework/zend-expressive-authorization.git",
-                "reference": "8bbf76574e8901777b82a962bbcf377937925a60"
+                "url": "https://github.com/webimpress/http-middleware-compatibility.git",
+                "reference": "793d21864a0417bbe01437c33f902cac49c1788c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-authorization/zipball/8bbf76574e8901777b82a962bbcf377937925a60",
-                "reference": "8bbf76574e8901777b82a962bbcf377937925a60",
+                "url": "https://api.github.com/repos/webimpress/http-middleware-compatibility/zipball/793d21864a0417bbe01437c33f902cac49c1788c",
+                "reference": "793d21864a0417bbe01437c33f902cac49c1788c",
                 "shasum": ""
             },
             "require": {
-                "http-interop/http-middleware": "^0.4.1",
+                "http-interop/http-middleware": "^0.1.1 || ^0.2 || ^0.3 || ^0.4.1 || ^0.5",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.22 || ^6.3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload/http-middleware.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "Compatibility library for Draft PSR-15 HTTP Middleware",
+            "homepage": "https://github.com/webimpress/http-middleware-compatibility",
+            "keywords": [
+                "middleware",
+                "psr-15",
+                "webimpress"
+            ],
+            "time": "2017-10-05T15:55:30+00:00"
+        },
+        {
+            "name": "zendframework/zend-expressive-authorization",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-expressive-authorization.git",
+                "reference": "e06b440b6b60bceca480083fdb3572d7130789f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-authorization/zipball/e06b440b6b60bceca480083fdb3572d7130789f6",
+                "reference": "e06b440b6b60bceca480083fdb3572d7130789f6",
+                "shasum": ""
+            },
+            "require": {
                 "php": "^7.1",
                 "psr/container": "^1.0",
                 "psr/http-message": "^1.0.1",
-                "zendframework/zend-expressive-router": "^2.1.0"
+                "webimpress/http-middleware-compatibility": "^0.1.1",
+                "zendframework/zend-expressive-router": "^2.2"
             },
             "conflict": {
                 "container-interop/container-interop": "<1.2.0"
@@ -266,31 +306,31 @@
                 "psr-7",
                 "zend-expressive"
             ],
-            "time": "2017-09-28T13:32:24+00:00"
+            "time": "2017-10-09T20:16:32+00:00"
         },
         {
             "name": "zendframework/zend-expressive-router",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-router.git",
-                "reference": "88d711aee740ac8fbd684472469e16b85435cc79"
+                "reference": "f6eac53d39cdbf7b6db11b3e6bb3565896633de4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-router/zipball/88d711aee740ac8fbd684472469e16b85435cc79",
-                "reference": "88d711aee740ac8fbd684472469e16b85435cc79",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-router/zipball/f6eac53d39cdbf7b6db11b3e6bb3565896633de4",
+                "reference": "f6eac53d39cdbf7b6db11b3e6bb3565896633de4",
                 "shasum": ""
             },
             "require": {
-                "fig/http-message-util": "^1.1",
-                "http-interop/http-middleware": "^0.4.1",
+                "fig/http-message-util": "^1.1.2",
                 "php": "^5.6 || ^7.0",
-                "psr/http-message": "^1.0"
+                "psr/http-message": "^1.0.1",
+                "webimpress/http-middleware-compatibility": "^0.1.1"
             },
             "require-dev": {
                 "malukenho/docheader": "^0.1.5",
-                "phpunit/phpunit": "^4.7 || ^5.6",
+                "phpunit/phpunit": "^6.0.8 || ^5.7.15",
                 "zendframework/zend-coding-standard": "~1.0.0"
             },
             "suggest": {
@@ -301,8 +341,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev",
-                    "dev-develop": "2.2-dev"
+                    "dev-master": "2.2-dev",
+                    "dev-develop": "2.3-dev"
                 }
             },
             "autoload": {
@@ -322,7 +362,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2017-01-24T22:28:12+00:00"
+            "time": "2017-10-09T18:44:11+00:00"
         },
         {
             "name": "zendframework/zend-permissions-rbac",
@@ -1030,16 +1070,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "6.3.1",
+            "version": "6.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c0ff817b36a827e64bf5f57bc72278150cf30a77"
+                "reference": "b770d8ba7e60295ee91d69d5a5e01ae833cac220"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c0ff817b36a827e64bf5f57bc72278150cf30a77",
-                "reference": "c0ff817b36a827e64bf5f57bc72278150cf30a77",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b770d8ba7e60295ee91d69d5a5e01ae833cac220",
+                "reference": "b770d8ba7e60295ee91d69d5a5e01ae833cac220",
                 "shasum": ""
             },
             "require": {
@@ -1084,7 +1124,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.3.x-dev"
+                    "dev-master": "6.4.x-dev"
                 }
             },
             "autoload": {
@@ -1110,7 +1150,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-09-24T07:25:54+00:00"
+            "time": "2017-10-07T17:53:53+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
