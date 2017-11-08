@@ -11,17 +11,6 @@
         "zendframework",
         "zend-expressive"
     ],
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        },
-        "zf": {
-            "config-provider": "Zend\\Expressive\\Authorization\\Rbac\\ConfigProvider"
-        }
-    },
     "support": {
         "docs": "https://docs.zendframework.com/zend-expressive-authorization-rbac/",
         "issues": "https://github.com/zendframework/zend-expressive-authorization-rbac/issues",
@@ -54,6 +43,17 @@
     "autoload-dev": {
         "psr-4": {
             "ZendTest\\Expressive\\Authorization\\Rbac\\": "test/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "zf": {
+            "config-provider": "Zend\\Expressive\\Authorization\\Rbac\\ConfigProvider"
         }
     },
     "scripts": {
