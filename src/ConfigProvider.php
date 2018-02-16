@@ -19,7 +19,9 @@ class ConfigProvider
     public function getDependencies() : array
     {
         return [
-            ZendRbac::class => ZendRbacFactory::class,
+            'factories' => [
+                ZendRbac::class => ZendRbacFactory::class,
+            ],
         ];
     }
 }

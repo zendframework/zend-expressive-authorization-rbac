@@ -31,5 +31,7 @@ class ConfigProviderTest extends TestCase
     {
         $this->assertArrayHasKey('dependencies', $config);
         $this->assertInternalType('array', $config['dependencies']);
+        $this->assertArrayHasKey('factories', $config['dependencies']);
+        $this->assertInternalType('array', $config['dependencies']['factories']);
     }
 }
