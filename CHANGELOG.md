@@ -2,6 +2,53 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.2.0 - 2018-02-27
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- [#12](https://github.com/zendframework/zend-expressive-authorization-rbac/pull/12)
+  removes all exceptions from the package, in favor of using exceptions defined
+  in zend-expressive-authorization.
+
+### Fixed
+
+- Nothing.
+
+## 0.1.4 - 2018-02-20
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- [#11](https://github.com/zendframework/zend-expressive-authorization-rbac/pull/11)
+  fixes missing configuration factories key.
+
 ## 0.1.3 - 2017-12-13
 
 ### Added

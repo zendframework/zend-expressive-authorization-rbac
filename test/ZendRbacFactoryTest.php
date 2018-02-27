@@ -1,50 +1,52 @@
 <?php
 /**
  * @see       https://github.com/zendframework/zend-expressive-authorization-rbac for the canonical source repository
- * @copyright Copyright (c) 2017 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright Copyright (c) 2017-2018 Zend Technologies USA Inc. (https://www.zend.com)
  * @license   https://github.com/zendframework/zend-expressive-authorization-rbac/blob/master/LICENSE.md New BSD License
  */
+
+declare(strict_types=1);
 
 namespace ZendTest\Expressive\Authorization\Rbac;
 
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Container\ContainerInterface;
+use Zend\Expressive\Authorization\Exception;
 use Zend\Expressive\Authorization\Rbac\ZendRbac;
 use Zend\Expressive\Authorization\Rbac\ZendRbacFactory;
 use Zend\Expressive\Authorization\Rbac\ZendRbacAssertionInterface;
 
 class ZendRbacFactoryTest extends TestCase
 {
+    /** @var ContainerInterface|ObjectProphecy */
+    private $container;
+
     protected function setUp()
     {
         $this->container = $this->prophesize(ContainerInterface::class);
     }
 
-    /**
-     * @expectedException Zend\Expressive\Authorization\Rbac\Exception\InvalidConfigException
-     */
     public function testFactoryWithoutConfig()
     {
         $this->container->get('config')->willReturn([]);
 
         $factory = new ZendRbacFactory();
+
+        $this->expectException(Exception\InvalidConfigException::class);
         $factory($this->container->reveal());
     }
 
-    /**
-     * @expectedException Zend\Expressive\Authorization\Rbac\Exception\InvalidConfigException
-     */
     public function testFactoryWithoutZendRbacConfig()
     {
         $this->container->get('config')->willReturn(['authorization' => []]);
 
         $factory = new ZendRbacFactory();
+
+        $this->expectException(Exception\InvalidConfigException::class);
         $factory($this->container->reveal());
     }
 
-    /**
-     * @expectedException Zend\Expressive\Authorization\Rbac\Exception\InvalidConfigException
-     */
     public function testFactoryWithoutPermissions()
     {
         $this->container->get('config')->willReturn([
@@ -54,6 +56,8 @@ class ZendRbacFactoryTest extends TestCase
         ]);
 
         $factory = new ZendRbacFactory();
+
+        $this->expectException(Exception\InvalidConfigException::class);
         $factory($this->container->reveal());
     }
 
@@ -110,8 +114,8 @@ class ZendRbacFactoryTest extends TestCase
                     'administrator' => [
                         'admin.settings',
                     ],
-                ]
-            ]
+                ],
+            ],
         ]);
         $this->container->has(ZendRbacAssertionInterface::class)->willReturn(false);
 
@@ -140,8 +144,8 @@ class ZendRbacFactoryTest extends TestCase
                     'administrator' => [
                         'admin.settings',
                     ],
-                ]
-            ]
+                ],
+            ],
         ]);
         $assertion = $this->prophesize(ZendRbacAssertionInterface::class);
         $this->container->has(ZendRbacAssertionInterface::class)->willReturn(true);
@@ -152,9 +156,6 @@ class ZendRbacFactoryTest extends TestCase
         $this->assertInstanceOf(ZendRbac::class, $zendRbac);
     }
 
-    /**
-     * @expectedException Zend\Expressive\Authorization\Rbac\Exception\InvalidConfigException
-     */
     public function testFactoryWithInvalidRole()
     {
         $this->container->get('config')->willReturn([
@@ -162,18 +163,17 @@ class ZendRbacFactoryTest extends TestCase
                 'roles' => [
                     1 => [],
                 ],
-                'permissions' => []
-            ]
+                'permissions' => [],
+            ],
         ]);
         $this->container->has(ZendRbacAssertionInterface::class)->willReturn(false);
 
         $factory = new ZendRbacFactory();
-        $zendRbac = $factory($this->container->reveal());
+
+        $this->expectException(Exception\InvalidConfigException::class);
+        $factory($this->container->reveal());
     }
 
-    /**
-     * @expectedException Zend\Expressive\Authorization\Rbac\Exception\InvalidConfigException
-     */
     public function testFactoryWithUnknownRole()
     {
         $this->container->get('config')->willReturn([
@@ -192,6 +192,8 @@ class ZendRbacFactoryTest extends TestCase
         $this->container->has(ZendRbacAssertionInterface::class)->willReturn(false);
 
         $factory = new ZendRbacFactory();
-        $zendRbac = $factory($this->container->reveal());
+
+        $this->expectException(Exception\InvalidConfigException::class);
+        $factory($this->container->reveal());
     }
 }

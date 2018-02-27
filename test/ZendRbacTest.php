@@ -1,14 +1,18 @@
 <?php
 /**
  * @see       https://github.com/zendframework/zend-expressive-authorization-rbac for the canonical source repository
- * @copyright Copyright (c) 2017 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright Copyright (c) 2017-2018 Zend Technologies USA Inc. (https://www.zend.com)
  * @license   https://github.com/zendframework/zend-expressive-authorization-rbac/blob/master/LICENSE.md New BSD License
  */
+
+declare(strict_types=1);
 
 namespace ZendTest\Expressive\Authorization\Rbac;
 
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\ServerRequestInterface;
+use Zend\Expressive\Authorization\Exception;
 use Zend\Expressive\Authorization\Rbac\ZendRbac;
 use Zend\Expressive\Authorization\Rbac\ZendRbacAssertionInterface;
 use Zend\Expressive\Router\RouteResult;
@@ -16,6 +20,12 @@ use Zend\Permissions\Rbac\Rbac;
 
 class ZendRbacTest extends TestCase
 {
+    /** @var Rbac|ObjectProphecy */
+    private $rbac;
+
+    /** @var ZendRbacAssertionInterface|ObjectProphecy */
+    private $assertion;
+
     protected function setUp()
     {
         $this->rbac = $this->prophesize(Rbac::class);
@@ -34,9 +44,6 @@ class ZendRbacTest extends TestCase
         $this->assertInstanceOf(ZendRbac::class, $zendRbac);
     }
 
-    /**
-     * @expectedException Zend\Expressive\Authorization\Rbac\Exception\RuntimeException
-     */
     public function testIsGrantedWithoutRouteResult()
     {
         $zendRbac = new ZendRbac($this->rbac->reveal(), $this->assertion->reveal());
@@ -44,6 +51,7 @@ class ZendRbacTest extends TestCase
         $request = $this->prophesize(ServerRequestInterface::class);
         $request->getAttribute(RouteResult::class, false)->willReturn(false);
 
+        $this->expectException(Exception\RuntimeException::class);
         $zendRbac->isGranted('foo', $request->reveal());
     }
 
