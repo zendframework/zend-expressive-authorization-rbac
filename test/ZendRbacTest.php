@@ -9,6 +9,7 @@ namespace ZendTest\Expressive\Authorization\Rbac;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
+use Zend\Expressive\Authorization\Exception;
 use Zend\Expressive\Authorization\Rbac\ZendRbac;
 use Zend\Expressive\Authorization\Rbac\ZendRbacAssertionInterface;
 use Zend\Expressive\Router\RouteResult;
@@ -34,9 +35,6 @@ class ZendRbacTest extends TestCase
         $this->assertInstanceOf(ZendRbac::class, $zendRbac);
     }
 
-    /**
-     * @expectedException Zend\Expressive\Authorization\Rbac\Exception\RuntimeException
-     */
     public function testIsGrantedWithoutRouteResult()
     {
         $zendRbac = new ZendRbac($this->rbac->reveal(), $this->assertion->reveal());
@@ -44,6 +42,7 @@ class ZendRbacTest extends TestCase
         $request = $this->prophesize(ServerRequestInterface::class);
         $request->getAttribute(RouteResult::class, false)->willReturn(false);
 
+        $this->expectException(Exception\RuntimeException::class);
         $zendRbac->isGranted('foo', $request->reveal());
     }
 

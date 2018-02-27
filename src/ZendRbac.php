@@ -9,6 +9,7 @@ namespace Zend\Expressive\Authorization\Rbac;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Expressive\Authorization\AuthorizationInterface;
+use Zend\Expressive\Authorization\Exception;
 use Zend\Expressive\Router\RouteResult;
 use Zend\Permissions\Rbac\AssertionInterface;
 use Zend\Permissions\Rbac\Rbac;
