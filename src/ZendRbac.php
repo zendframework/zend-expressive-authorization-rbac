@@ -22,7 +22,7 @@ class ZendRbac implements AuthorizationInterface
     private $rbac;
 
     /**
-     * @var AssertionInterface
+     * @var null|AssertionInterface
      */
     private $assertion;
 
