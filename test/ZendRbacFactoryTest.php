@@ -108,8 +108,8 @@ class ZendRbacFactoryTest extends TestCase
                     'administrator' => [
                         'admin.settings',
                     ],
-                ]
-            ]
+                ],
+            ],
         ]);
         $this->container->has(ZendRbacAssertionInterface::class)->willReturn(false);
 
@@ -138,8 +138,8 @@ class ZendRbacFactoryTest extends TestCase
                     'administrator' => [
                         'admin.settings',
                     ],
-                ]
-            ]
+                ],
+            ],
         ]);
         $assertion = $this->prophesize(ZendRbacAssertionInterface::class);
         $this->container->has(ZendRbacAssertionInterface::class)->willReturn(true);
@@ -157,8 +157,8 @@ class ZendRbacFactoryTest extends TestCase
                 'roles' => [
                     1 => [],
                 ],
-                'permissions' => []
-            ]
+                'permissions' => [],
+            ],
         ]);
         $this->container->has(ZendRbacAssertionInterface::class)->willReturn(false);
 
