@@ -1,7 +1,7 @@
 <?php
 /**
  * @see       https://github.com/zendframework/zend-expressive-authorization-rbac for the canonical source repository
- * @copyright Copyright (c) 2017 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright Copyright (c) 2017-2018 Zend Technologies USA Inc. (https://www.zend.com)
  * @license   https://github.com/zendframework/zend-expressive-authorization-rbac/blob/master/LICENSE.md New BSD License
  */
 
@@ -9,7 +9,7 @@ namespace ZendTest\Expressive\Authorization\Rbac;
 
 use PHPUnit\Framework\TestCase;
 use Zend\Expressive\Authorization\Rbac\ConfigProvider;
-use Zend\ServiceManager\Config;
+use Zend\Expressive\Authorization\Rbac\ZendRbac;
 use Zend\ServiceManager\ServiceManager;
 
 class ConfigProviderTest extends TestCase
@@ -37,9 +37,11 @@ class ConfigProviderTest extends TestCase
         $this->assertArrayHasKey('dependencies', $config);
         $this->assertInternalType('array', $config['dependencies']);
         $this->assertArrayHasKey('factories', $config['dependencies']);
-        $this->assertInternalType('array', $config['dependencies']['factories']);
-    }
 
+        $factories = $config['dependencies']['factories'];
+        $this->assertInternalType('array', $factories);
+        $this->assertArrayHasKey(ZendRbac::class, $factories);
+    }
 
     public function testServicesDefinedInConfigProvider()
     {
@@ -74,9 +76,6 @@ class ConfigProviderTest extends TestCase
 
     private function getContainer(array $dependencies) : ServiceManager
     {
-        $container = new ServiceManager();
-        (new Config($dependencies))->configureServiceManager($container);
-
-        return $container;
+        return new ServiceManager($dependencies);
     }
 }
