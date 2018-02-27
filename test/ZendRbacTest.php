@@ -8,6 +8,7 @@
 namespace ZendTest\Expressive\Authorization\Rbac;
 
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Expressive\Authorization\Exception;
 use Zend\Expressive\Authorization\Rbac\ZendRbac;
@@ -17,6 +18,12 @@ use Zend\Permissions\Rbac\Rbac;
 
 class ZendRbacTest extends TestCase
 {
+    /** @var Rbac|ObjectProphecy */
+    private $rbac;
+
+    /** @var ZendRbacAssertionInterface|ObjectProphecy */
+    private $assertion;
+
     protected function setUp()
     {
         $this->rbac = $this->prophesize(Rbac::class);

@@ -14,7 +14,10 @@ use Zend\ServiceManager\ServiceManager;
 
 class ConfigProviderTest extends TestCase
 {
-    public function setUp()
+    /** @var ConfigProvider */
+    private $provider;
+
+    protected function setUp()
     {
         $this->provider = new ConfigProvider();
     }
