@@ -44,9 +44,9 @@ class ZendRbacFactory
         $this->injectRoles($rbac, $config['roles']);
         $this->injectPermissions($rbac, $config['permissions']);
 
-        $assertion = $container->has(ZendRbacAssertionInterface::class) ?
-                     $container->get(ZendRbacAssertionInterface::class) :
-                     null;
+        $assertion = $container->has(ZendRbacAssertionInterface::class)
+            ? $container->get(ZendRbacAssertionInterface::class)
+            : null;
 
         return new ZendRbac($rbac, $assertion);
     }
