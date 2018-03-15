@@ -14,6 +14,11 @@ use Zend\Expressive\Authorization\Rbac\ConfigProvider;
 use Zend\Expressive\Authorization\Rbac\ZendRbac;
 use Zend\ServiceManager\ServiceManager;
 
+use function array_merge_recursive;
+use function file_get_contents;
+use function json_decode;
+use function sprintf;
+
 class ConfigProviderTest extends TestCase
 {
     /** @var ConfigProvider */

@@ -15,6 +15,8 @@ use Zend\Expressive\Authorization\Exception;
 use Zend\Permissions\Rbac\Exception\ExceptionInterface as RbacExceptionInterface;
 use Zend\Permissions\Rbac\Rbac;
 
+use function sprintf;
+
 class ZendRbacFactory
 {
     /**

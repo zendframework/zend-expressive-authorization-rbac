@@ -16,6 +16,8 @@ use Zend\Expressive\Router\RouteResult;
 use Zend\Permissions\Rbac\AssertionInterface;
 use Zend\Permissions\Rbac\Rbac;
 
+use function sprintf;
+
 class ZendRbac implements AuthorizationInterface
 {
     /**
