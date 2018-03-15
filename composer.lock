@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "daa7d5436113cbbfedf90eb53dba86a2",
+    "content-hash": "cba83fc2c4d5f7fc661c867a6beb8738",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -263,16 +263,16 @@
         },
         {
             "name": "zendframework/zend-expressive-authentication",
-            "version": "1.0.0alpha4",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-authentication.git",
-                "reference": "290e4d67fb9b5728755e3bf6082242578ceb51ad"
+                "reference": "2fea5529d78cddc26921e46e87ea886ccb8cc7d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-authentication/zipball/290e4d67fb9b5728755e3bf6082242578ceb51ad",
-                "reference": "290e4d67fb9b5728755e3bf6082242578ceb51ad",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-authentication/zipball/2fea5529d78cddc26921e46e87ea886ccb8cc7d1",
+                "reference": "2fea5529d78cddc26921e46e87ea886ccb8cc7d1",
                 "shasum": ""
             },
             "require": {
@@ -298,8 +298,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev",
-                    "dev-release-1.0.0": "1.0.x-dev"
+                    "dev-master": "0.4.x-dev"
                 },
                 "zf": {
                     "config-provider": "Zend\\Expressive\\Authentication\\ConfigProvider"
@@ -325,20 +324,20 @@
                 "zend-expressive",
                 "zf"
             ],
-            "time": "2018-02-27T14:48:50+00:00"
+            "time": "2018-03-15T17:19:40+00:00"
         },
         {
             "name": "zendframework/zend-expressive-authorization",
-            "version": "1.0.0alpha2",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-authorization.git",
-                "reference": "734bfd547fed1b4cb0d3f3f35a68aabf9552087a"
+                "reference": "6dd093ebb6a25147e0907367e7112a0be1398ddd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-authorization/zipball/734bfd547fed1b4cb0d3f3f35a68aabf9552087a",
-                "reference": "734bfd547fed1b4cb0d3f3f35a68aabf9552087a",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-authorization/zipball/6dd093ebb6a25147e0907367e7112a0be1398ddd",
+                "reference": "6dd093ebb6a25147e0907367e7112a0be1398ddd",
                 "shasum": ""
             },
             "require": {
@@ -346,7 +345,7 @@
                 "psr/container": "^1.0",
                 "psr/http-message": "^1.0.1",
                 "psr/http-server-middleware": "^1.0",
-                "zendframework/zend-expressive-authentication": "^1.0.0alpha3"
+                "zendframework/zend-expressive-authentication": "^0.4.0"
             },
             "conflict": {
                 "container-interop/container-interop": "<1.2.0"
@@ -363,8 +362,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.3.x-dev",
-                    "dev-release-1.0.0": "1.0.x-dev"
+                    "dev-master": "1.0.x-dev"
                 },
                 "zf": {
                     "config-provider": "Zend\\Expressive\\Authorization\\ConfigProvider"
@@ -389,20 +387,20 @@
                 "zend-expressive",
                 "zf"
             ],
-            "time": "2018-02-27T15:13:28+00:00"
+            "time": "2018-03-15T18:37:09+00:00"
         },
         {
             "name": "zendframework/zend-expressive-router",
-            "version": "3.0.0alpha3",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-router.git",
-                "reference": "737f79bffa8900388367d02e66dc0d0bcdba1eed"
+                "reference": "a1298921eb486d2a093205347a394e1ec74a9c43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-router/zipball/737f79bffa8900388367d02e66dc0d0bcdba1eed",
-                "reference": "737f79bffa8900388367d02e66dc0d0bcdba1eed",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-router/zipball/a1298921eb486d2a093205347a394e1ec74a9c43",
+                "reference": "a1298921eb486d2a093205347a394e1ec74a9c43",
                 "shasum": ""
             },
             "require": {
@@ -414,7 +412,7 @@
             },
             "require-dev": {
                 "malukenho/docheader": "^0.1.6",
-                "phpunit/phpunit": "^6.5.5",
+                "phpunit/phpunit": "^7.0.2",
                 "zendframework/zend-coding-standard": "~1.0.0"
             },
             "suggest": {
@@ -425,9 +423,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3.x-dev",
-                    "dev-develop": "2.4.x-dev",
-                    "dev-release-3.0.0": "3.0.x-dev"
+                    "dev-master": "3.0.x-dev",
+                    "dev-develop": "3.1.x-dev"
                 },
                 "zf": {
                     "config-provider": "Zend\\Expressive\\Router\\ConfigProvider"
@@ -453,7 +450,7 @@
                 "zend-expressive",
                 "zf"
             ],
-            "time": "2018-02-21T18:39:37+00:00"
+            "time": "2018-03-15T15:59:46+00:00"
         },
         {
             "name": "zendframework/zend-permissions-rbac",
@@ -1340,18 +1337,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "f3e52bf601a4224e2eb3ac8e833c129beff8abc8"
+                "reference": "1b2f1f59ff8fc933e4d61ee45214ff3228e20c75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f3e52bf601a4224e2eb3ac8e833c129beff8abc8",
-                "reference": "f3e52bf601a4224e2eb3ac8e833c129beff8abc8",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1b2f1f59ff8fc933e4d61ee45214ff3228e20c75",
+                "reference": "1b2f1f59ff8fc933e4d61ee45214ff3228e20c75",
                 "shasum": ""
             },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "adodb/adodb-php": "<5.20.6",
                 "amphp/artax": "<1.0.6|>=2,<2.0.6",
+                "amphp/http": "<1.0.1",
                 "asymmetricrypt/asymmetricrypt": ">=0,<9.9.99",
                 "aws/aws-sdk-php": ">=3,<3.2.1",
                 "bugsnag/bugsnag-laravel": ">=2,<2.0.2",
@@ -1375,10 +1373,10 @@
                 "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
                 "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1",
                 "dompdf/dompdf": ">=0.6,<0.6.2",
-                "drupal/core": ">=8,<8.3.7",
-                "drupal/drupal": ">=8,<8.3.7",
-                "erusev/parsedown": "<=1.6.4",
-                "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.2|>=5.4,<5.4.10.1|>=2017.8,<2017.8.1.1",
+                "drupal/core": ">=8,<8.4.5",
+                "drupal/drupal": ">=8,<8.4.5",
+                "erusev/parsedown": "<1.7",
+                "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.3|>=5.4,<5.4.11.3|>=2017.8,<2017.8.1.1|>=2017.12,<2017.12.2.1",
                 "firebase/php-jwt": "<2",
                 "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
                 "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
@@ -1399,7 +1397,8 @@
                 "oro/crm": ">=1.7,<1.7.4",
                 "oro/platform": ">=1.7,<1.7.4",
                 "padraic/humbug_get_contents": "<1.1.2",
-                "pagarme/pagarme-php": ">=0,<9.9.99",
+                "pagarme/pagarme-php": ">=0,<3",
+                "paragonie/random_compat": "<2",
                 "phpmailer/phpmailer": ">=5,<5.2.24",
                 "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
                 "phpxmlrpc/extras": "<0.6.1",
@@ -1412,7 +1411,7 @@
                 "silverstripe/forum": "<=0.6.1|>=0.7,<=0.7.3",
                 "silverstripe/framework": ">=3,<3.3",
                 "silverstripe/userforms": "<3",
-                "simplesamlphp/saml2": "<1.10.4|>=2,<2.3.5|>=3,<3.1.1",
+                "simplesamlphp/saml2": "<1.10.6|>=2,<2.3.8|>=3,<3.1.4",
                 "simplesamlphp/simplesamlphp": "<1.15.2",
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
                 "socalnick/scn-social-auth": "<1.15.2",
@@ -1487,7 +1486,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-02-25T12:47:47+00:00"
+            "time": "2018-03-15T17:53:05+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -2366,8 +2365,6 @@
     "aliases": [],
     "minimum-stability": "alpha",
     "stability-flags": {
-        "zendframework/zend-expressive-authorization": 15,
-        "zendframework/zend-expressive-router": 15,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.3.0 - 2018-03-15
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- Locks zend-expressive-authorization to the 0.4.0 series.
+
+- Updates the zend-expressive-router constraint to `^3.0`.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.2.0 - 2018-02-27
 
 ### Added
