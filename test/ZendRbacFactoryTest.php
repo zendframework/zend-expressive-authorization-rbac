@@ -14,8 +14,8 @@ use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Container\ContainerInterface;
 use Zend\Expressive\Authorization\Exception;
 use Zend\Expressive\Authorization\Rbac\ZendRbac;
-use Zend\Expressive\Authorization\Rbac\ZendRbacFactory;
 use Zend\Expressive\Authorization\Rbac\ZendRbacAssertionInterface;
+use Zend\Expressive\Authorization\Rbac\ZendRbacFactory;
 
 class ZendRbacFactoryTest extends TestCase
 {
