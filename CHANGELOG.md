@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.3.1 - 2018-05-15
+
+### Added
+
+- [#15](https://github.com/zendframework/zend-expressive-authorization-rbac/pull/15) adds support for the v3 release tree of zend-permissions-rbac, as the
+  API consumed by this package is unchanged.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.3.0 - 2018-03-15
 
 ### Added
