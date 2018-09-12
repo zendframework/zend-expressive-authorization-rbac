@@ -1,16 +1,16 @@
 # Dynamic assertion
 
-In some cases, you need to authorize a `role` based on a specific HTTP request.
-For instance, imagine that you have an `editor` rule that can add/update/delete
-a page in a Content Management System (CMS). We want prevent an `editor` to be
-able to modify a page that has not been created by him/her.
+In some cases you will need to authorize a role based on a specific HTTP request.
+For instance, imagine that you have an "editor" role that can add/update/delete
+a page in a Content Management System (CMS). We want to prevent an "editor" from
+modifying pages they have not created.
 
 These types of authorization are called [dynamic assertions](https://docs.zendframework.com/zend-permissions-rbac/examples/#dynamic-assertions)
-and are implemented by `Zend\Permissions\Rbac\AssertionInterface` of
+and are implemented via the `Zend\Permissions\Rbac\AssertionInterface` of
 [zend-permissions-rbac](https://github.com/zendframework/zend-permissions-rbac).
 
-In order to use it, we need to implement a `ZendRbacAssertionInterface`
-interface, that extends the `Zend\Permissions\Rbac\AssertionInterface`:
+In order to use it, thie package provides `ZendRbacAssertionInterface`,
+which extends `Zend\Permissions\Rbac\AssertionInterface`:
 
 ```php
 namespace Zend\Expressive\Authorization\Rbac;
@@ -24,7 +24,7 @@ interface ZendRbacAssertionInterface extends AssertionInterface
 }
 ```
 
-The `Zend\Permissions\Rbac\AssertionInterface` is as follows:
+The `Zend\Permissions\Rbac\AssertionInterface` defines the following:
 
 ```php
 namespace Zend\Permissions\Rbac;
@@ -35,8 +35,8 @@ interface AssertionInterface
 }
 ```
 
-Going back to the previous use case, we can build a class to manage the `editor`
-authorization needs, as follows:
+Going back to our use case, we can build a class to manage the "editor"
+authorization requirements, as follows:
 
 ```php
 use Zend\Expressive\Authorization\Rbac\ZendRbacAssertionInterface;
@@ -62,17 +62,17 @@ class EditorAuth implements ZendRbacAssertionInterface
 }
 ```
 
-Where `Article` is a service/model class to check if the logged user is the
-owner of the article identified by the HTTP request.
+Where `Article` is a class that checks if the identified user is the owner of
+the article referenced in the HTTP request.
 
-For instance, if you manage the articles using a SQL database the implementation
-of `isUserOwner` can be something like the follows:
+If you manage articles using a SQL database, the implementation of
+`isUserOwner()` might look like the following:
 
 ```php
 public function isUserOwner(string $identity, ServerRequestInterface $request): bool
 {
-    // get the article {url} attribute specified in the route
-    $url = $request->getAttribute('url', false);
+    // get the article {article_id} attribute specified in the route
+    $url = $request->getAttribute('article_id', false);
     if (! $url) {
         return false;
     }
@@ -89,8 +89,8 @@ public function isUserOwner(string $identity, ServerRequestInterface $request): 
 }
 ```
 
-To pass the `Article` dependency you can use a Factory class that generates the
-`EditorAuth` class instance, as follows:
+To pass the `Article` dependency to your assertion, you can use a Factory class
+that generates the `EditorAuth` class instance, as follows:
 
 ```php
 use App\Service\Article;
@@ -100,15 +100,14 @@ class EditorAuthFactory
     public function __invoke(ContainerInterface $container) : EditorAuth
     {
         return new EditorAuth(
-            $container->get(Article::class);
+            $container->get(Article::class)
         );
     }
 }
 ```
 
 And configure the service container to use `EditorAuthFactory` to point to
-`EditorAuth`. If you use [zend-servicemanager](https://github.com/zendframework/zend-servicemanager)
-this is done by the following configuration:
+`EditorAuth`, using the following configuration:
 
 ```php
 return [    
