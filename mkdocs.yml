@@ -2,8 +2,10 @@ docs_dir: docs/book
 site_dir: docs/html
 pages:
     - index.md
-    - Introduction: intro.md
-site_name: Component Name Goes Here
-site_description: 'Component Description goes here'
+    - Introduction: v1/intro.md
+    - Reference:
+        - 'Dynamic assertion': v1/dynamic-assertion.md
+site_name: zend-expressive-authorization-rbac
+site_description: 'RBAC authorization middleware for Expressive and PSR-7 applications'
 repo_url: 'https://github.com/zendframework/zend-expressive-authorization-rbac'
-copyright: 'Copyright (c) 2017-2018 <a href="http://www.zend.com/">Zend Technologies USA Inc.</a>'
+copyright: 'Copyright (c) 2018 <a href="http://www.zend.com/">Zend Technologies USA Inc.</a>'

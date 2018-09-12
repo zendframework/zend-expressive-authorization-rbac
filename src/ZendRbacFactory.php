@@ -24,7 +24,7 @@ class ZendRbacFactory
      */
     public function __invoke(ContainerInterface $container) : AuthorizationInterface
     {
-        $config = $container->get('config')['authorization'] ?? null;
+        $config = $container->get('config')['zend-expressive-authorization-rbac'] ?? null;
         if (null === $config) {
             throw new Exception\InvalidConfigException(sprintf(
                 'Cannot create %s instance; no "authorization" config key present',
