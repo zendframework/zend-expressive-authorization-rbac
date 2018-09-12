@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Changed
 
-- Nothing.
+- [#16](https://github.com/zendframework/zend-expressive-authorization-rbac/pull/16) pins to the 1.0 series of zendframework/zend-expressive-authorization.
 
 ### Deprecated
 
