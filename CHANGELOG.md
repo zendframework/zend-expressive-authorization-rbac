@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.0.0 - TBD
+## 1.0.0 - 2018-09-13
 
 ### Added
 
@@ -10,7 +10,10 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Changed
 
-- [#16](https://github.com/zendframework/zend-expressive-authorization-rbac/pull/16) pins to the 1.0 series of zendframework/zend-expressive-authorization.
+- [#16](https://github.com/zendframework/zend-expressive-authorization-rbac/pull/16)
+  pins to the 1.0 series of zendframework/zend-expressive-authorization.
+  Changed the service configuration key to `zend-expressive-authorization-rbac`
+  instead of `authorization`.
 
 ### Deprecated
 
