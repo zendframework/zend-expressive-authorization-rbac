@@ -9,7 +9,7 @@ These types of authorization are called [dynamic assertions](https://docs.zendfr
 and are implemented via the `Zend\Permissions\Rbac\AssertionInterface` of
 [zend-permissions-rbac](https://github.com/zendframework/zend-permissions-rbac).
 
-In order to use it, thie package provides `ZendRbacAssertionInterface`,
+In order to use it, this package provides `ZendRbacAssertionInterface`,
 which extends `Zend\Permissions\Rbac\AssertionInterface`:
 
 ```php
