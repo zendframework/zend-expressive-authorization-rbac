@@ -39,7 +39,7 @@ class ZendRbacFactoryTest extends TestCase
 
     public function testFactoryWithoutZendRbacConfig()
     {
-        $this->container->get('config')->willReturn(['authorization' => []]);
+        $this->container->get('config')->willReturn(['zend-expressive-authorization-rbac' => []]);
 
         $factory = new ZendRbacFactory();
 
@@ -50,7 +50,7 @@ class ZendRbacFactoryTest extends TestCase
     public function testFactoryWithoutPermissions()
     {
         $this->container->get('config')->willReturn([
-            'authorization' => [
+            'zend-expressive-authorization-rbac' => [
                 'roles' => []
             ]
         ]);
@@ -64,7 +64,7 @@ class ZendRbacFactoryTest extends TestCase
     public function testFactoryWithEmptyRolesPermissionsWithoutAssertion()
     {
         $this->container->get('config')->willReturn([
-            'authorization' => [
+            'zend-expressive-authorization-rbac' => [
                 'roles' => [],
                 'permissions' => []
             ]
@@ -79,7 +79,7 @@ class ZendRbacFactoryTest extends TestCase
     public function testFactoryWithEmptyRolesPermissionsWithAssertion()
     {
         $this->container->get('config')->willReturn([
-            'authorization' => [
+            'zend-expressive-authorization-rbac' => [
                 'roles' => [],
                 'permissions' => []
             ]
@@ -97,7 +97,7 @@ class ZendRbacFactoryTest extends TestCase
     public function testFactoryWithoutAssertion()
     {
         $this->container->get('config')->willReturn([
-            'authorization' => [
+            'zend-expressive-authorization-rbac' => [
                 'roles' => [
                     'administrator' => [],
                     'editor'        => ['administrator'],
@@ -127,7 +127,7 @@ class ZendRbacFactoryTest extends TestCase
     public function testFactoryWithAssertion()
     {
         $this->container->get('config')->willReturn([
-            'authorization' => [
+            'zend-expressive-authorization-rbac' => [
                 'roles' => [
                     'administrator' => [],
                     'editor'        => ['administrator'],
@@ -159,7 +159,7 @@ class ZendRbacFactoryTest extends TestCase
     public function testFactoryWithInvalidRole()
     {
         $this->container->get('config')->willReturn([
-            'authorization' => [
+            'zend-expressive-authorization-rbac' => [
                 'roles' => [
                     1 => [],
                 ],
@@ -177,7 +177,7 @@ class ZendRbacFactoryTest extends TestCase
     public function testFactoryWithUnknownRole()
     {
         $this->container->get('config')->willReturn([
-            'authorization' => [
+            'zend-expressive-authorization-rbac' => [
                 'roles' => [
                     'administrator' => [],
                 ],
