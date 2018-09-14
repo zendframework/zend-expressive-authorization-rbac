@@ -22,7 +22,9 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Fixed
 
-- Nothing.
+- [#17](https://github.com/zendframework/zend-expressive-authorization-rbac/pull/17)
+  fixes exception messages on invalid configuration to refer new configuration key
+  `zend-expressive-authorization-rbac` instead of `authorization`.
 
 ## 1.0.0 - 2018-09-13
 
