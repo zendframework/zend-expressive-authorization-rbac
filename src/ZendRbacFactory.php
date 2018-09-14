@@ -27,19 +27,19 @@ class ZendRbacFactory
         $config = $container->get('config')['zend-expressive-authorization-rbac'] ?? null;
         if (null === $config) {
             throw new Exception\InvalidConfigException(sprintf(
-                'Cannot create %s instance; no "authorization" config key present',
+                'Cannot create %s instance; no "zend-expressive-authorization-rbac" config key present',
                 ZendRbac::class
             ));
         }
         if (! isset($config['roles'])) {
             throw new Exception\InvalidConfigException(sprintf(
-                'Cannot create %s instance; no authorization.roles configured',
+                'Cannot create %s instance; no zend-expressive-authorization-rbac.roles configured',
                 ZendRbac::class
             ));
         }
         if (! isset($config['permissions'])) {
             throw new Exception\InvalidConfigException(sprintf(
-                'Cannot create %s instance; no authorization.permissions configured',
+                'Cannot create %s instance; no zend-expressive-authorization-rbac.permissions configured',
                 ZendRbac::class
             ));
         }
