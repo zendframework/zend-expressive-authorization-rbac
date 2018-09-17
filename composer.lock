@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2dec2530a8c00abbba2e42cfcc0fdb30",
+    "content-hash": "1edfd69c93428f2b369af4b1c94144fa",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -1443,7 +1443,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-08-14T15:39:17+00:00"
+            "time": "2018-03-22T21:16:54+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
