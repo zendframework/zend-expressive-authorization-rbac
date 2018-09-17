@@ -34,6 +34,7 @@ class ZendRbacFactoryTest extends TestCase
         $factory = new ZendRbacFactory();
 
         $this->expectException(Exception\InvalidConfigException::class);
+        $this->expectExceptionMessage('zend-expressive-authorization-rbac');
         $factory($this->container->reveal());
     }
 
@@ -44,6 +45,7 @@ class ZendRbacFactoryTest extends TestCase
         $factory = new ZendRbacFactory();
 
         $this->expectException(Exception\InvalidConfigException::class);
+        $this->expectExceptionMessage('zend-expressive-authorization-rbac.roles');
         $factory($this->container->reveal());
     }
 
@@ -58,6 +60,7 @@ class ZendRbacFactoryTest extends TestCase
         $factory = new ZendRbacFactory();
 
         $this->expectException(Exception\InvalidConfigException::class);
+        $this->expectExceptionMessage('zend-expressive-authorization-rbac.permissions');
         $factory($this->container->reveal());
     }
 
