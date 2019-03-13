@@ -1,4 +1,4 @@
-# RBAC Authorizations for Expressive
+# Introduction
 
 This component provides [Role-Based Access Control](https://en.wikipedia.org/wiki/Role-based_access_control)
 (RBAC) authorization abstraction for the [zend-expressive-authorization](https://github.com/zendframework/zend-expressive-authentication)
