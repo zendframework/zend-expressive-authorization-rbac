@@ -1,3 +1,0 @@
-# zend-expressive-authorization-rbac
-
-This component provides ...

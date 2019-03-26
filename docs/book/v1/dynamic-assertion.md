@@ -1,4 +1,4 @@
-# Dynamic assertion
+# Dynamic Assertion
 
 In some cases you will need to authorize a role based on a specific HTTP request.
 For instance, imagine that you have an "editor" role that can add/update/delete

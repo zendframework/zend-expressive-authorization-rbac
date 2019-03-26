@@ -1,11 +1,10 @@
 docs_dir: docs/book
 site_dir: docs/html
 pages:
-    - index.md
+    - Home: index.md
     - Introduction: v1/intro.md
     - Reference:
-        - 'Dynamic assertion': v1/dynamic-assertion.md
+        - 'Dynamic Assertion': v1/dynamic-assertion.md
 site_name: zend-expressive-authorization-rbac
-site_description: 'RBAC authorization middleware for Expressive and PSR-7 applications'
+site_description: 'RBAC permission adapter for zend-expressive-authorization.'
 repo_url: 'https://github.com/zendframework/zend-expressive-authorization-rbac'
-copyright: 'Copyright (c) 2018 <a href="http://www.zend.com/">Zend Technologies USA Inc.</a>'
