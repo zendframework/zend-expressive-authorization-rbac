@@ -234,7 +234,7 @@ and are implemented via the <code>Zend\Permissions\Rbac\AssertionInterface</code
 <a href="https://github.com/zendframework/zend-permissions-rbac">zend-permissions-rbac</a>.</p>
 <p>In order to use it, this package provides <code>ZendRbacAssertionInterface</code>,
 which extends <code>Zend\Permissions\Rbac\AssertionInterface</code>:</p>
-<pre class="codehilite"><code class="language-php">namespace Zend\Expressive\Authorization\Rbac;
+<p> <pre class=codehilite><code class=language-php>namespace Zend\Expressive\Authorization\Rbac;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Permissions\Rbac\AssertionInterface;
@@ -242,19 +242,17 @@ use Zend\Permissions\Rbac\AssertionInterface;
 interface ZendRbacAssertionInterface extends AssertionInterface
 {
     public function setRequest(ServerRequestInterface $request) : void;
-}</code></pre>
-
+}</code></pre></p>
 <p>The <code>Zend\Permissions\Rbac\AssertionInterface</code> defines the following:</p>
-<pre class="codehilite"><code class="language-php">namespace Zend\Permissions\Rbac;
+<p> <pre class=codehilite><code class=language-php>namespace Zend\Permissions\Rbac;
 
 interface AssertionInterface
 {
     public function assert(Rbac $rbac, RoleInterface $role, string $permission) : bool;
-}</code></pre>
-
+}</code></pre></p>
 <p>Going back to our use case, we can build a class to manage the "editor"
 authorization requirements, as follows:</p>
-<pre class="codehilite"><code class="language-php">use Zend\Expressive\Authorization\Rbac\ZendRbacAssertionInterface;
+<p> <pre class=codehilite><code class=language-php>use Zend\Expressive\Authorization\Rbac\ZendRbacAssertionInterface;
 use App\Service\Article;
 
 class EditorAuth implements ZendRbacAssertionInterface
@@ -274,13 +272,12 @@ class EditorAuth implements ZendRbacAssertionInterface
         $user = $this-&gt;request-&gt;getAttribute(UserInterface::class, false);
         return $this-&gt;article-&gt;isUserOwner($user-&gt;getIdentity(), $this-&gt;request);
     }
-}</code></pre>
-
+}</code></pre></p>
 <p>Where <code>Article</code> is a class that checks if the identified user is the owner of
 the article referenced in the HTTP request.</p>
 <p>If you manage articles using a SQL database, the implementation of
 <code>isUserOwner()</code> might look like the following:</p>
-<pre class="codehilite"><code class="language-php">public function isUserOwner(string $identity, ServerRequestInterface $request): bool
+<p> <pre class=codehilite><code class=language-php>public function isUserOwner(string $identity, ServerRequestInterface $request): bool
 {
     // get the article {article_id} attribute specified in the route
     $url = $request-&gt;getAttribute('article_id', false);
@@ -297,11 +294,10 @@ the article referenced in the HTTP request.</p>
     }
     $row = $sth-&gt;fetch();
     return ! empty($row);
-}</code></pre>
-
+}</code></pre></p>
 <p>To pass the <code>Article</code> dependency to your assertion, you can use a Factory class
 that generates the <code>EditorAuth</code> class instance, as follows:</p>
-<pre class="codehilite"><code class="language-php">use App\Service\Article;
+<p> <pre class=codehilite><code class=language-php>use App\Service\Article;
 
 class EditorAuthFactory
 {
@@ -311,18 +307,17 @@ class EditorAuthFactory
             $container-&gt;get(Article::class)
         );
     }
-}</code></pre>
-
+}</code></pre></p>
 <p>And configure the service container to use <code>EditorAuthFactory</code> to point to
 <code>EditorAuth</code>, using the following configuration:</p>
-<pre class="codehilite"><code class="language-php">return [    
+<p> <pre class=codehilite><code class=language-php>return [    
     'dependencies' =&gt; [
         'factories' =&gt; [
             // ...
             EditorAuth::class =&gt; EditorAuthFactory::class
         ]
     ]
-];</code></pre>
+];</code></pre></p>
 
 
 
@@ -352,7 +347,7 @@ class EditorAuthFactory
     <div class="help-wanted">
         <p>
             Found a mistake or want to contribute to the documentation?
-            <a href="https://github.com/zendframework/zend-expressive-authorization-rbac/edit/master/docs/v1/dynamic-assertion.md" target="_blank" class="help-wanted__link">
+            <a href="https://github.com/zendframework/zend-expressive-authorization-rbac/edit/master/docs/book/v1/dynamic-assertion.md" target="_blank" class="help-wanted__link">
                 Edit this page on GitHub!
             </a>
         </p>

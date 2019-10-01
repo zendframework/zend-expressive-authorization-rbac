@@ -255,7 +255,7 @@ That library provides a PSR-7 request attribute named
 The RBAC system uses this instance to get information about the user's identity.</p>
 <h2 id="configure-an-rbac-system">Configure an RBAC system</h2>
 <p>You can configure your RBAC using a configuration file, as follows:</p>
-<pre class="codehilite"><code class="language-php">// config/autoload/authorization.local.php
+<p> <pre class=codehilite><code class=language-php>// config/autoload/authorization.local.php
 return [
     // ...
     'zend-expressive-authorization-rbac' =&gt; [
@@ -277,8 +277,7 @@ return [
             ],
         ],
     ]
-];</code></pre>
-
+];</code></pre></p>
 <p>In the above example, we designed an RBAC system with 3 roles: <code>administator</code>,
 <code>editor</code>, and <code>contributor</code>. We defined a hierarchy of roles as follows:</p>
 <ul>
@@ -298,8 +297,7 @@ routes <code>admin.publish</code> (assigned to <code>editor</code> role) and <co
 <p>If you want to change the authorization logic for each permission, you can write
 your own <code>Zend\Expressive\Authorization\AuthorizationInterface</code> implementation.
 That interface defines the following method:</p>
-<pre class="codehilite"><code class="language-php">isGranted(string $role, ServerRequestInterface $request) : bool</code></pre>
-
+<p> <pre class=codehilite><code class=language-php>isGranted(string $role, ServerRequestInterface $request) : bool</code></pre></p>
 <p>where <code>$role</code> is the role and <code>$request</code> is the PSR-7 HTTP request to authorize.</p>
 <blockquote>
 <p>This library uses the <a href="https://docs.zendframework.com/zend-permissions-rbac/">zendframework/zend-permissions-rbac</a>
@@ -340,7 +338,7 @@ of this library, read the blog post
     <div class="help-wanted">
         <p>
             Found a mistake or want to contribute to the documentation?
-            <a href="https://github.com/zendframework/zend-expressive-authorization-rbac/edit/master/docs/v1/intro.md" target="_blank" class="help-wanted__link">
+            <a href="https://github.com/zendframework/zend-expressive-authorization-rbac/edit/master/docs/book/v1/intro.md" target="_blank" class="help-wanted__link">
                 Edit this page on GitHub!
             </a>
         </p>
