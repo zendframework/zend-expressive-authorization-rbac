@@ -2,7 +2,7 @@
 
 > ## Repository abandoned 2019-12-31
 >
-> This repository has moved to mezzio/mezzio-authorization-rbac.
+> This repository has moved to [mezzio/mezzio-authorization-rbac](https://github.com/mezzio/mezzio-authorization-rbac).
 
 [![Build Status](https://secure.travis-ci.org/zendframework/zend-expressive-authorization-rbac.svg?branch=master)](https://secure.travis-ci.org/zendframework/zend-expressive-authorization-rbac)
 [![Coverage Status](https://coveralls.io/repos/github/zendframework/zend-expressive-authorization-rbac/badge.svg?branch=master)](https://coveralls.io/github/zendframework/zend-expressive-authorization-rbac?branch=master)
