@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RBAC permission adapter for zend-expressive-authorization.">  
-    <link rel="canonical" href="https://docs.zendframework.com/zend-expressive-authorization-rbac/v1/dynamic-assertion/">
+    <link rel="canonical" href="https://docs.zendframework.com/v1/dynamic-assertion/">
     <link rel="shortcut icon" href="../../img/favicon.ico">
 
     <title>Dynamic Assertion - zend-expressive-authorization-rbac - Zend Framework Docs</title>
 
-    <link rel="stylesheet" href="../../css/styles-5cfabd53ee.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body id="page-top">
 
@@ -169,9 +169,9 @@
     <div class="laminas-announcement">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-                Zend Framework transitions to the Linux Foundation. <a href="https://getlaminas.org">Learn More.</a>
-            </div>
+            <div class="col-xs-12"><strong>
+                This package has moved. Visit its replacement, <a href="https://docs.mezzio.dev/mezzio-authorization-rbac/">mezzio/mezzio-authorization-rbac.</a>
+            </strong></div>
         </div>
     </div>
 </div>
@@ -234,7 +234,7 @@ and are implemented via the <code>Zend\Permissions\Rbac\AssertionInterface</code
 <a href="https://github.com/zendframework/zend-permissions-rbac">zend-permissions-rbac</a>.</p>
 <p>In order to use it, this package provides <code>ZendRbacAssertionInterface</code>,
 which extends <code>Zend\Permissions\Rbac\AssertionInterface</code>:</p>
-<p> <pre class=codehilite><code class=language-php>namespace Zend\Expressive\Authorization\Rbac;
+<pre><code class="language-php">namespace Zend\Expressive\Authorization\Rbac;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Permissions\Rbac\AssertionInterface;
@@ -242,17 +242,21 @@ use Zend\Permissions\Rbac\AssertionInterface;
 interface ZendRbacAssertionInterface extends AssertionInterface
 {
     public function setRequest(ServerRequestInterface $request) : void;
-}</code></pre></p>
+}
+</code></pre>
+
 <p>The <code>Zend\Permissions\Rbac\AssertionInterface</code> defines the following:</p>
-<p> <pre class=codehilite><code class=language-php>namespace Zend\Permissions\Rbac;
+<pre><code class="language-php">namespace Zend\Permissions\Rbac;
 
 interface AssertionInterface
 {
     public function assert(Rbac $rbac, RoleInterface $role, string $permission) : bool;
-}</code></pre></p>
+}
+</code></pre>
+
 <p>Going back to our use case, we can build a class to manage the "editor"
 authorization requirements, as follows:</p>
-<p> <pre class=codehilite><code class=language-php>use Zend\Expressive\Authorization\Rbac\ZendRbacAssertionInterface;
+<pre><code class="language-php">use Zend\Expressive\Authorization\Rbac\ZendRbacAssertionInterface;
 use App\Service\Article;
 
 class EditorAuth implements ZendRbacAssertionInterface
@@ -272,12 +276,14 @@ class EditorAuth implements ZendRbacAssertionInterface
         $user = $this-&gt;request-&gt;getAttribute(UserInterface::class, false);
         return $this-&gt;article-&gt;isUserOwner($user-&gt;getIdentity(), $this-&gt;request);
     }
-}</code></pre></p>
+}
+</code></pre>
+
 <p>Where <code>Article</code> is a class that checks if the identified user is the owner of
 the article referenced in the HTTP request.</p>
 <p>If you manage articles using a SQL database, the implementation of
 <code>isUserOwner()</code> might look like the following:</p>
-<p> <pre class=codehilite><code class=language-php>public function isUserOwner(string $identity, ServerRequestInterface $request): bool
+<pre><code class="language-php">public function isUserOwner(string $identity, ServerRequestInterface $request): bool
 {
     // get the article {article_id} attribute specified in the route
     $url = $request-&gt;getAttribute('article_id', false);
@@ -294,10 +300,12 @@ the article referenced in the HTTP request.</p>
     }
     $row = $sth-&gt;fetch();
     return ! empty($row);
-}</code></pre></p>
+}
+</code></pre>
+
 <p>To pass the <code>Article</code> dependency to your assertion, you can use a Factory class
 that generates the <code>EditorAuth</code> class instance, as follows:</p>
-<p> <pre class=codehilite><code class=language-php>use App\Service\Article;
+<pre><code class="language-php">use App\Service\Article;
 
 class EditorAuthFactory
 {
@@ -307,17 +315,20 @@ class EditorAuthFactory
             $container-&gt;get(Article::class)
         );
     }
-}</code></pre></p>
+}
+</code></pre>
+
 <p>And configure the service container to use <code>EditorAuthFactory</code> to point to
 <code>EditorAuth</code>, using the following configuration:</p>
-<p> <pre class=codehilite><code class=language-php>return [    
+<pre><code class="language-php">return [    
     'dependencies' =&gt; [
         'factories' =&gt; [
             // ...
             EditorAuth::class =&gt; EditorAuthFactory::class
         ]
     ]
-];</code></pre></p>
+];
+</code></pre>
 
 
 
@@ -449,7 +460,7 @@ class EditorAuthFactory
             
             <div class="col-md-9">
                 <h4 class="footer__headline">Copyright</h4>
-                <p>&copy; 2006-2019 by <a href="https://www.zend.com/">Zend</a>, a <a href="https://www.roguewave.com/">Rogue Wave Company</a>.</p>
+                <p>&copy; 2006-2020 by <a href="https://www.zend.com/">Zend</a> by <a href="https://www.perforce.com/">Perforce</a>.</p>
             </div>
 
             
@@ -457,10 +468,10 @@ class EditorAuthFactory
                 <h4 class="footer__headline">Support</h4>
                 <ul class="support__list">
                     <li class="support__list-item">
-                        <a href="https://discourse.zendframework.com" class="support__link" title="Forum"><i class="fa fa-comments"></i></a>
+                        <a href="https://discourse.laminas.dev" class="support__link" title="Forum"><i class="fa fa-comments"></i></a>
                     </li>
                     <li class="support__list-item">
-                        <a href="https://zendframework-slack.herokuapp.com" class="support__link" title="Chat"><i class="fa fa-slack"></i></a>
+                        <a href="https://laminas.dev/chat/" class="support__link" title="Chat"><i class="fa fa-slack"></i></a>
                     </li>
                     <li class="support__list-item">
                         <a href="https://github.com/zendframework" class="support__link" title="Github"><i class="fa fa-github"></i></a>
@@ -468,27 +479,28 @@ class EditorAuthFactory
                     <li class="support__list-item">
                         <a href="https://twitter.com/zfdevteam" class="support__link" title="Twitter"><i class="fa fa-twitter"></i></a>
                     </li>
-                    <li class="support__list-item">
-                        <a href="https://tinyletter.com/mwopzend" class="support__link" title="Newsletter"><i class="fa fa-envelope"></i></a>
-                    </li>
-                    <li class="support__list-item">
-                        <a href="https://framework.zend.com/blog/feed-rss.xml" class="support__link" title="Blog feed"><i class="fa fa-rss"></i></a>
-                    </li>
-                    <li class="support__list-item">
-                        <a href="https://framework.zend.com/security/feed" class="support__link" title="Security feed"><i class="fa fa-rss-square"></i></a>
-                    </li>
                 </ul>
             </div>
         </div>
     </div>
 </footer>
 
+<nav class="cookie-bar navbar navbar-fixed-bottom navbar-default hidden">
+    <div class="container">
+        <p class="navbar-text">
+            We use cookies to allow you to dismiss dialogs such as the Laminas
+            Project notification.
+        </p>
+        <button type="button" class="cookie-button btn btn-default navbar-btn">Allow Cookies</button>
+    </div>
+</nav>
+
     <script>
         var base_url = '../..',
             siteName = 'zend-expressive-authorization-rbac';
     </script>
-    <script src="../../js/scripts-8d7ae56abf.js"></script>
-        <script src="../../search/main.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="../../search/main.js"></script>
 
     
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
